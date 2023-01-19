@@ -1,4 +1,8 @@
 const newYear = '1 jan 2024';
+const daysEl = document.getElementById("days");
+const hoursEl = document.getElementById("hours");
+const minsEl = document.getElementById("mins");
+const secondsEl = document.getElementById("seconds");
 
 function countdown() {
     const newYearDate = new Date(newYear);
@@ -11,5 +15,11 @@ function countdown() {
     let mins = Math.floor(totalSeconds / 60) % 60;
     let seconds = Math.floor(totalSeconds) % 60;
     
-
+    daysEl.innerHTML = days;
+    hoursEl.innerHTML = hours;
+    minsEl.innerHTML = mins;
+    secondsEl.innerHTML = seconds;
 }
+
+countdown();
+setInterval(countdown, 1000);
